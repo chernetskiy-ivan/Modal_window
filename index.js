@@ -1,2 +1,2 @@
 //$ всего лишь объект, условная библиотека
-//const myModal = $.modal()
+const modal = $.modal()
