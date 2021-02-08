@@ -1,4 +1,4 @@
-const fruits = [
+let fruits = [
     {id: 1, title: 'Яблоки', price: 20, img: 'https://e1.edimdoma.ru/data/ingredients/0000/2374/2374-ed4_wide.jpg?1487746348'},
     {id: 2, title: 'Апельсины', price: 30, img: 'https://m.dom-eda.com/uploads/images/catalog/item/dfc9a3e974/3cbf3bd41c_1000.jpg'},
     {id: 3, title: 'Манго', price: 40, img: 'https://st3.depositphotos.com/1020804/12760/i/600/depositphotos_127608560-stock-photo-mango-cubes-and-mango-fruit.jpg'}
@@ -50,6 +50,11 @@ document.addEventListener('click', event => {
             title: 'Вы уверены?',
             content: `<p>Вы удаляете фрукт: <strong>${fruit.title}</strong></p>`
             }
-        ).then(() => {console.log('Remove')}).catch(() => {console.log('Cancel')})
+        ).then(() => {
+            //удаление не нужного элемента из массива за счет переопределения
+            //переменной массива и метода filter
+            fruits = fruits.filter(f => f.id !== id)
+            render()
+        }).catch(() => {console.log('Cancel')})
     }
 })
